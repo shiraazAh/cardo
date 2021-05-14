@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap');
+
+.container {
+    display: block;
+    margin: auto;
+}
+
+.cardBrown {
+    height: 140px;
+    width: 255px;
+    left: -80px;
+    top: 174px;
+    margin-left: auto;
+    margin-right: auto;
+    /* left: 0; */
+    right: 0;
+    text-align: center;
+    border-radius: 18.48630714416504px;
+    position: absolute;
+    background: radial-gradient(163.99% 342.3% at 109.94% 120.57%, #93510E 0%, #E0B66A 60.51%, #FFF6D6 100%);
+    border-radius: 18.4863px;
+    /* transform: matrix(1, -0.58, 0, 0.89, 0, 0); */
+    transform: matrix(1, -0.58, 0, 1, 0, 0);
+    z-index: 10;
+}
+
+.cardBlue {
+    height: 140px;
+    width: 255px;
+    left: -180px;
+    top: 160px;
+    border-radius: 18.48630714416504px;
+    margin-left: auto;
+    margin-right: auto;
+    /* left: 0; */
+    right: 0;
+    text-align: center;
+    position: absolute;
+    z-index: 9;
+    background: radial-gradient(138.1% 425.94% at 118.1% -36.41%, #CA8BFB 0%, #9C2CF3 37.87%, #3A49F9 100%);
+    border-radius: 18.4863px;
+    transform: matrix(1, -0.58, 0, 1, 0, 0);
+}
+
+.cardViolet {
+    height: 140px;
+    width: 255px;
+    left: -260px;
+    top: 150px;
+    border-radius: 18.48630714416504px;
+    margin-left: auto;
+    margin-right: auto;
+    /* left: 0; */
+    right: 0;
+    text-align: center;
+    position: absolute;
+    z-index: 8;
+    background: radial-gradient(138.1% 425.94% at 118.1% -36.41%, #FB8BCE 0%, #744C94 37.87%, #2f2d2d 100%);
+    border-radius: 18.4863px;
+    transform: matrix(1, -0.58, 0, 1, 0, 0);
+}
+
+.cardAmount {
+    position: absolute;
+    left: 10%;
+    top: 4%;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 26px;   
+    /* identical to box height */
+    letter-spacing: 0.05em;
+    color: #0A0909;
+    text-shadow: 1.31955px 1.31955px 2.6391px rgba(0, 0, 0, 0.43);
+}
+
+.cardHolder {
+    position: absolute;
+    left: 10%;
+    top: 8%;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 8px;
+    line-height: 10px;
+    letter-spacing: 0.05em;
+    color: #0A0909;
+    text-shadow: 1.31955px 1.31955px 2.6391px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+}
+
+.cardNumber {
+    position: absolute;
+    left: 10%;
+    top: 68.5%;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 13px;
+    letter-spacing: 0.385131px;
+    color: #414141;
+    opacity: 0.9;
+}
+
+.cardDate {
+    position: absolute;
+    height: 10.01px;
+    right: 10%;
+    top: 70%;
+    font-family: Signika;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 14px;
+    text-align: right;
+    letter-spacing: 0.385131px;
+    color: #424242;
+}
+
+.logoBrown {
+    position: absolute;
+    width: 42px;
+    height: 20px;
+    right: 10%;
+    top: 13%; 
+    /* box-shadow: inset 0px 2.6391px 1.97932px rgba(255, 255, 255, 0.25); */
+    filter: drop-shadow(0px 2.6391px 2.6391px rgba(0, 0, 0, 0.25));
+    /* transform: matrix(0.71, 0.41, -1.22, 0.71, 0, 0); */
+}
+
+.textWhite {
+    color: white;
+}
+
+.animationBrown {
+  animation: brownSpin 1.5s;
+}
+.animationBlue {
+  animation: blueSpin 1.5s;
+}
+.animationViolet {
+  animation: violetSpin 1.5s;
+}
+
+/* @keyframes brownSpin{
+    from {
+      transform: matrix(0.71, 0.41, -1.22, 0.71, 0, 0);
+      left: 0px;
+      top: 104px;
+    }
+    to {
+      transform: matrix(1, -0.58, 0, 1, 0, 0);
+      left: -80px;
+      top: 154px;
+    }
+  } */
+
+@keyframes brownSpin {
+  0%   {
+    transform: matrix(0.71, 0.41, -1.22, 0.71, 0, 0);
+    left: 0px;
+    top: 124px;
+  }
+  50%  {    
+    transform: matrix(0.71, 0.41, -1.22, 0.71, 0, 0);
+    left: 0px;
+    top: 94px;
+  }
+  100% {      
+    transform: matrix(1, -0.58, 0, 1, 0, 0);
+    left: -80px;
+    top: 174px;
+  }
+}
+
+/* @keyframes blueSpin{
+    from {
+      transform: matrix(0.71, 0.41, -1.22, 0.71, 0, 0);
+      left: 12px;
+      top: 162px;
+    }
+    to {
+      transform: matrix(1, -0.58, 0, 1, 0, 0);
+      left: -180px;
+      top: 140px;
+    }
+  } */
+
+@keyframes blueSpin {
+  0%   {
+    transform: matrix(0.71, 0.41, -1.22, 0.71, 0, 0);
+    left: 12px;
+    top: 182px;
+  }
+  50%  {    
+    transform: matrix(0.71, 0.41, -1.22, 0.71, 0, 0);
+    left: 12px;
+    top: 182px;
+  }
+  100% {      
+    transform: matrix(1, -0.58, 0, 1, 0, 0);
+    left: -180px;
+    top: 160px;
+  }
+}
+
+/* @keyframes violetSpin{
+    from {
+      transform: matrix(0.71, 0.41, -1.22, 0.71, 0, 0);
+      left: 6px;
+      top: 222px;
+    }
+    to {
+      transform: matrix(1, -0.58, 0, 1, 0, 0);
+      left: -260px;
+      top: 130px;
+    }
+  } */
+
+  @keyframes violetSpin {
+    0%   {
+      transform: matrix(0.71, 0.41, -1.22, 0.71, 0, 0);
+      left: 6px;
+      top: 242px;
+    }
+    50%  {    
+      transform: matrix(0.71, 0.41, -1.22, 0.71, 0, 0);
+      left: 6px;
+      top: 276px;
+    }
+    100% {      
+      transform: matrix(1, -0.58, 0, 1, 0, 0);
+      left: -260px;
+      top: 150px;
+    }
+  }
