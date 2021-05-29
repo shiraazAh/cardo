@@ -1,0 +1,23 @@
+.iconBoxBrown {
+    width: 73.15px;
+    height: 73.15px;
+    background: #C9974E;
+    box-shadow: 0px 4.57176px 18.287px rgba(46, 38, 217, 0.3);
+    border-radius: 14.6296px;
+}
+
+.iconBoxBlue {
+    width: 73.15px;
+    height: 73.15px;
+    background: #A136F4;
+    box-shadow: 0px 4.57176px 18.287px rgba(46, 38, 217, 0.3);
+    border-radius: 14.6296px;
+}
+
+.iconBoxViolet {
+    width: 73.15px;
+    height: 73.15px;
+    background: #2E26D9;
+    box-shadow: 0px 4.57176px 18.287px rgba(46, 38, 217, 0.3);
+    border-radius: 14.6296px;
+}
