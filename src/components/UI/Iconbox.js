@@ -18,7 +18,7 @@ const IconBox = (props) => {
 
     return (
         <div className={styleClass}>
-            <img src={props.src} alt="IconBox Logo"></img>
+            <img src={props.src}></img>
         </div>
     )
 }
