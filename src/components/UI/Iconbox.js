@@ -7,14 +7,14 @@ const IconBox = (props) => {
     const [styleClass, setStyleClass] = useState('')
 
     useEffect(() => {
-        if(props.color === 'brown') {
+        if(props.selectedCard === 'brown') {
             setStyleClass(styles.iconBoxBrown)
-        } else if (props.color === 'blue') {
+        } else if (props.selectedCard === 'blue') {
             setStyleClass(styles.iconBoxBlue)
-        } else if (props.color === 'violet') {
+        } else if (props.selectedCard === 'violet') {
             setStyleClass(styles.iconBoxViolet)
         }
-    }, [props.color])
+    }, [props.selectedCard])
 
     return (
         <div className={styleClass}>

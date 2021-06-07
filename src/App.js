@@ -7,10 +7,12 @@ import './App.css';
 
 function App() {
   const { height, width } = useWindowDimensions();
+  const [cardColor, setCardColor] = useState('brown');
+
   return (
     <div className="App example" style={{background: 'black'}}>
-        <AllCards/>
-        <ExpenseMotionContainer />
+        <AllCards setCardColor={setCardColor}/>
+        <ExpenseMotionContainer selectedCard={cardColor}/>
     </div>
   );
 }

@@ -25,22 +25,26 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                 </Grid>
                 <Grid container style={{marginLeft: '20px'}} spacing={3}>
                     <Grid item xs={3}>
-                      <FilterButton class={styles.DateSort} 
+                      <FilterButton class={styles.DateSort}
+                        selectedCard={props.selectedCard} 
                         selected={selectedFilter.day} 
                         click={() => setSelectedFilter({day: true, week: false, month: false, year: false})}>Day</FilterButton>
                     </Grid>
                     <Grid item xs={3}>
-                      <FilterButton class={styles.DateSort} 
+                      <FilterButton class={styles.DateSort}
+                        selectedCard={props.selectedCard} 
                         selected={selectedFilter.week} 
                         click={() => setSelectedFilter({day: false, week: true, month: false, year: false})}>Week</FilterButton>
                     </Grid>
                     <Grid item xs={3}>
-                      <FilterButton class={styles.DateSort} 
+                      <FilterButton class={styles.DateSort}
+                        selectedCard={props.selectedCard} 
                         selected={selectedFilter.month} 
                         click={() => setSelectedFilter({day: false, week: false, month: true, year: false})}>Month</FilterButton>
                     </Grid>
                     <Grid item xs={3}>
-                      <FilterButton class={styles.DateSort} 
+                      <FilterButton class={styles.DateSort}
+                        selectedCard={props.selectedCard} 
                         selected={selectedFilter.year} 
                         click={() => setSelectedFilter({day: false, week: false, month: false, year: true})}>Year</FilterButton>
                     </Grid>
@@ -60,7 +64,10 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
 
                 <Grid container style={{borderBottom: '2px solid #F0EEFF', marginLeft: '20px', marginRight: '20px', marginTop: '5px', padding: '15px 0 10px'}} spacing={3}>
                   <Grid item xs={3}>
-                    <IconBox color="brown" src={''}/>
+                    <IconBox 
+                      color="brown" 
+                      selectedCard={props.selectedCard}
+                      src={''}/>
                   </Grid>  
                   <Grid item xs={8}>
                     <div className={styles.ExpenseBox}>
@@ -80,7 +87,10 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
 
                 <Grid container style={{borderBottom: '2px solid #F0EEFF', marginLeft: '20px', marginRight: '20px', marginTop: '5px', padding: '15px 0 10px'}} spacing={3}>
                   <Grid item xs={3}>
-                    <IconBox color="brown" src={''}/>
+                    <IconBox 
+                      color="brown" 
+                      selectedCard={props.selectedCard}
+                      src={''}/>
                   </Grid>  
                   <Grid item xs={8}>
                     <div className={styles.ExpenseBox}>
@@ -100,7 +110,10 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
 
                 <Grid container style={{borderBottom: '2px solid #F0EEFF', marginLeft: '20px', marginRight: '20px', marginTop: '5px', padding: '15px 0 10px'}} spacing={3}>
                   <Grid item xs={3}>
-                    <IconBox color="brown" src={''}/>
+                    <IconBox 
+                      color="brown" 
+                      selectedCard={props.selectedCard}
+                      src={''}/>
                   </Grid>  
                   <Grid item xs={8}>
                     <div className={styles.ExpenseBox}>
@@ -120,7 +133,10 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                   
                 <Grid container style={{borderBottom: '2px solid #F0EEFF', marginLeft: '20px', marginRight: '20px', marginTop: '5px', padding: '15px 0 10px'}} spacing={3}>
                   <Grid item xs={3}>
-                    <IconBox color="brown" src={''}/>
+                    <IconBox 
+                      color="brown" 
+                      selectedCard={props.selectedCard}
+                      src={''}/>
                   </Grid>  
                   <Grid item xs={8}>
                     <div className={styles.ExpenseBox}>
@@ -140,7 +156,10 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
 
                 <Grid container style={{borderBottom: '2px solid #F0EEFF', marginLeft: '20px', marginRight: '20px', marginTop: '5px', padding: '15px 0 10px'}} spacing={3}>
                   <Grid item xs={3}>
-                    <IconBox color="brown" src={''}/>
+                    <IconBox 
+                      color="brown" 
+                      selectedCard={props.selectedCard}
+                      src={''}/>
                   </Grid>  
                   <Grid item xs={8}>
                     <div className={styles.ExpenseBox}>
@@ -160,7 +179,10 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
 
                 <Grid container style={{borderBottom: '2px solid #F0EEFF', marginLeft: '20px', marginRight: '20px', marginTop: '5px', padding: '15px 0 10px'}} spacing={3}>
                   <Grid item xs={3}>
-                    <IconBox color="brown" src={''}/>
+                    <IconBox 
+                      color="brown" 
+                      selectedCard={props.selectedCard}
+                      src={''}/>
                   </Grid>  
                   <Grid item xs={8}>
                     <div className={styles.ExpenseBox}>
@@ -180,7 +202,10 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                 
                 <Grid container style={{borderBottom: '2px solid #F0EEFF', marginLeft: '20px', marginRight: '20px', marginTop: '5px', padding: '15px 0 10px'}} spacing={3}>
                   <Grid item xs={3}>
-                    <IconBox color="brown" src={''}/>
+                    <IconBox 
+                      color="brown" 
+                      selectedCard={props.selectedCard}
+                      src={''}/>
                   </Grid>  
                   <Grid item xs={8}>
                     <div className={styles.ExpenseBox}>

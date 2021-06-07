@@ -3,7 +3,7 @@ import ExpensesContainer from "./ExpensesContainer";
 import { motion } from 'framer-motion'
 import useWindowDimensions from '../extras/useWindowDimensions'
 
-const ExpenseMotionContainer = () => {
+const ExpenseMotionContainer = (props) => {
   const [initial, setInitial] = useState('startPosition');
   const [animate, setAnimate] = useState('startAnimate')
 //   const [scrollPos, setScrollPos] = useState(1)
@@ -40,6 +40,7 @@ const ExpenseMotionContainer = () => {
   return (
     <div>
         <MotionComponent drag="y" 
+        selectedCard={props.selectedCard}
         initial={initial}
         animate={animate}
         variants={variants}
@@ -47,15 +48,12 @@ const ExpenseMotionContainer = () => {
           onDrag={
             (event, info) => {
               let move = compHeight;
-              console.log(move, event.movementY, height, width)
               compHeight = move + event.movementY;
               compMovePercentage.current = (((compHeight)/height) * 100)
-              console.log(compHeight, compMovePercentage)
             }
+            
           }
-          // DirectionLock={axis => {
-          //   console.log(axis);
-          // }}
+          dragConstraints={{bottom: 20, top: -650}}
           />
         {/* <motion.div style={{background: 'white', height: '40px',}}drag></motion.div>   */}
     </div>
