@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import ExpensesContainer from "./ExpensesContainer";
-import { motion } from 'framer-motion'
+import { motion, useMotionValue } from 'framer-motion'
 import useWindowDimensions from '../extras/useWindowDimensions'
 
 const ExpenseMotionContainer = (props) => {
@@ -22,17 +22,31 @@ const ExpenseMotionContainer = (props) => {
   //   scrollPos = (value - 400)/300;
   // }
 
+  const y = useMotionValue(-30);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setInitial('secondPostion')
+      setAnimate('afterFirstAnimate')
+    }, 2200)
+  }, [])
+
   const variants = {
     //When Brown Selected
     startAnimate: {
       y: -30,
       transition: { duration: 0.5, delay: 1.5}, //type: 'spring'
     },
+    afterFirstAnimate: {
+      y: -30,
+      transition: { duration: 0.5}, //type: 'spring'
+    },
     startPosition: {
       y: 0,
     },
     secondPostion: {
-      y: 470,
+      y: y.get(),
+      transition: { duration: 0.5, delay: 0.2},
     }
   }
 
@@ -40,11 +54,12 @@ const ExpenseMotionContainer = (props) => {
   return (
     <div>
         <MotionComponent drag="y" 
+        style={{y}}
         selectedCard={props.selectedCard}
         initial={initial}
         animate={animate}
         variants={variants}
-        transition={{duration: 0.5, delay: 1.5}}
+        // transition={{duration: 0.5, delay: 1.5}}
           onDrag={
             (event, info) => {
               let move = compHeight;
