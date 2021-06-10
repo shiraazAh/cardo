@@ -21,7 +21,7 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
           <div className={styles.topContainer}>
             <Grid container className={styles.Container} spacing={3}>
                 <Grid item xs={12}>
-                  <h3 className={styles.CardName}>Gold Card</h3>
+                  <h3 className={styles.CardName}>{props.selectedCard === 'brown' ? 'Gold Card' : props.selectedCard === 'blue' ? 'Blue Card' : 'Violet Card'}</h3>
                 </Grid>
                 <Grid container style={{marginLeft: '20px'}} spacing={3}>
                     <Grid item xs={3}>
