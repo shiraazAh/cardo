@@ -73,6 +73,12 @@ const initialCardPositionReducer = (initialCard, action) => {
           VioletCard: "selectedBrown_violet",
         }
       }
+    case "AllFalse":
+      return {
+        BrownCard: false,
+        BlueCard: false,
+        VioletCard: false
+      }
     default:
       break;
     }
@@ -80,7 +86,7 @@ const initialCardPositionReducer = (initialCard, action) => {
 
 const AllCards = (props) => {
 
-  const [selectedCard, dispatchCard] = useReducer(animationReducer, {
+  const [cardAnimate, dispatchCard] = useReducer(animationReducer, {
     BrownCard: "selectedBrown_brown",  //Current Animation for brown card 
     BlueCard: "selectedBrown_blue",  //Current Animation for blue card
     VioletCard: "selectedBrown_violet", //Current Animation for violet card
@@ -91,6 +97,8 @@ const AllCards = (props) => {
     BlueCard: '', // Initial position for Blue Card
     VioletCard: '', // Initial position for Violet Card
   })
+
+  const [selectedCard, setCard] = useState('brown')
 
   // const [initialBrown, setInitialBrown] = useState('') // Initial position for Brown Card
   // const [initialBlue, setInitialBlue] = useState('') // Initial position for Blue Card
@@ -112,14 +120,15 @@ const AllCards = (props) => {
 
   })
 
-  // useEffect(() => {
-  //  console.log(check) 
-  //  if(check) {
+  useEffect(() => {
+   console.log(check) 
+   if(check) {
   //  setInitialBlue(false)
   //  setInitialBrown(false)
   //  setInitialViolet(false)
-  //  }
-  // }, [check])
+    dispatchInitial({type:"AllFalse"})
+   }
+  }, [check])
 
   const variants = {
     //When Brown Selected
@@ -164,22 +173,39 @@ const AllCards = (props) => {
   }
 
   const selectBrown = () => {
-    dispatchInitial({type: "Brown", card: selectedCard.BlueCard })
-    dispatchCard({type: "Brown"})
-    props.setCardColor('brown')
+    if(selectedCard === "brown") {
+      dispatchInitial({type: "AllFalse"})
+    } else {
+      dispatchInitial({type: "Brown", card: cardAnimate.BlueCard })
+      dispatchCard({type: "Brown"})
+      setCard("brown");
+      props.setCardColor('brown')
+    }
   }
   
   const selectBlue = () => {
-    dispatchInitial({type: "Blue", card: selectedCard.BrownCard })
-    dispatchCard({type: "Blue"})
-    props.setCardColor('blue')
+
+    if(selectedCard === "blue") {
+      dispatchInitial({type: "AllFalse"})
+    } else {
+      dispatchInitial({type: "Blue", card: cardAnimate.BrownCard })
+      dispatchCard({type: "Blue"})
+      setCard("blue")
+      props.setCardColor('blue')
+    }
   }
 
 
   const selectViolet = () => {
-    dispatchInitial({type: "Violet", card: selectedCard.BlueCard })
-    dispatchCard({type: "Violet"})
-    props.setCardColor('violet')
+
+    if(selectedCard === "violet") {
+      dispatchInitial({type: "AllFalse"})
+    } else {
+      dispatchInitial({type: "Violet", card: cardAnimate.BlueCard })
+      dispatchCard({type: "Violet"})
+      setCard('violet')
+      props.setCardColor('violet')
+    }
   }
 
   return (
@@ -190,7 +216,7 @@ const AllCards = (props) => {
         <MotionComponent
           violet
           startAnimation={startAnimation}
-          animate={selectedCard.VioletCard}
+          animate={cardAnimate.VioletCard}
           variants={variants}
           whileTap={selectViolet}
           initial={initialCardPos.VioletCard}
@@ -198,7 +224,7 @@ const AllCards = (props) => {
         <MotionComponent
           blue
           startAnimation={startAnimation}
-          animate={selectedCard.BlueCard}
+          animate={cardAnimate.BlueCard}
           variants={variants}
           whileTap={selectBlue}
           initial={initialCardPos.BlueCard}
@@ -206,7 +232,7 @@ const AllCards = (props) => {
         <MotionComponent
           brown
           startAnimation={startAnimation}
-          animate={selectedCard.BrownCard}
+          animate={cardAnimate.BrownCard}
           variants={variants}
           whileTap={selectBrown}
           initial={initialCardPos.BrownCard}
