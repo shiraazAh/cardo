@@ -3,6 +3,7 @@ import {Grid} from '@material-ui/core';
 // import logoBrown from "../../assets/cardLogos/logoforbrown.png"
 import IconBox from "../UI/Iconbox";
 import FilterButton from "../UI/buttons/filterButtons"
+import DigitRoll from 'digit-roll-react'
 // import Expense from './Expense'
 
 import styles from './expenses.module.css';
@@ -15,6 +16,12 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
       month: false,
       year: false
     })
+    
+    useEffect(() => {
+      console.log("asd")
+    })
+
+    const [num, setNum] = useState(258563)
 
     return( 
         <div ref={ref}>
@@ -55,7 +62,8 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                   <p className={styles.TotalWin}>Total <span style={{color: 'rgba(203, 43, 111, 1)'}}>WIN</span></p>
                 </Grid>
                 <Grid item xs={6} style={{paddingBottom: '0px'}}>
-                  <p className={styles.WinAmount}>$258,563</p>
+                  <DigitRoll className={styles.WinAmount} num={num} height={2} width={1.3} length={9} divider="," />
+                  {/* <p className={styles.WinAmount}>$258,563</p> */}
                 </Grid>
                 </Grid>
                 {/* <Grid item xs={12} style={{padding: '0px'}}>
@@ -237,4 +245,4 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
         </div>
 )})
 
-export default ExpensesContainer;
+export default React.memo(ExpensesContainer);

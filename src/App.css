@@ -6,7 +6,35 @@
   font-family: Montserrat;
   -ms-overflow-style: none;
   /* overflow-x: hidden; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
+
+.App-desktop {
+  text-align: center;
+  font-family: Montserrat;
+  -ms-overflow-style: none;
+  width: 325px;
+  height: 685px;
+  overflow: hidden;
+  /* overflow-x: hidden; */
+  display: inline-block;
+  border-radius: 35px;
+  position: relative;
+  margin-right: 20px;
+  margin-top: 15px;
+}
+
+.iPhoneX-layout {
+  position: absolute;
+  width: 368px;
+  height: 747px;
+  margin-left: -21px;
+}
+
 .App::-webkit-scrollbar {
   -webkit-appearance: none;
 }
@@ -57,12 +85,12 @@ body {
   text-align: left;
   /* margin-top: 30px !important; */
   width: 350px;
-  /* display: block; */
+  display: block;
   margin: auto;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   top: 20px;
+  z-index: 10;
+  position: absolute;
+  margin-left: 10px;
 }
 
 .card-subheading {
@@ -70,16 +98,43 @@ body {
   text-align: left;
   /* margin-top: 30px !important; */
   width: 350px;
-  /* display: block; */
+  display: block;
   margin: auto;
-  position: absolute;
   font-size: 14px;
-  left: 50%;
   top: 40px;
-  transform: translateX(-50%);
+  z-index: 10;
+  position: absolute;
+  margin-left: 10px;
 }
 
 .all-cards-container {
-  height: 65vh;
+  height: 50vh;
   z-index: 100;
+}
+
+.DigitRoll {
+  font-size: 30px !important;
+  /* color: white; */
+  width: 100% !important;
+  margin-right: 0px !important;
+  border: none;
+  overflow:hidden;
+  border: none !important;
+}
+ 
+.DigitRoll__Cell {
+  /* background: salmon;
+  margin: 0 3px;
+  border: 1px solid brown; */
+  width: 2px;
+}
+
+.DigitRoll__Slice {
+  width: 20px;
+}
+ 
+.DigitRoll__Divider {
+  font-size: 25px;
+  color: black;
+  padding: 0 5px;
 }
