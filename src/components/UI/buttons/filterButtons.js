@@ -16,10 +16,15 @@ const FilterButton = (props) => {
     }, [color, props.selectedCard])
 
     return (
-        <motion.div className={props.class} style={props.selected && {background: color, color: 'white'}} whileTap={{scale: 1.05}} onTap={props.click}>
-            {props.children}
+        <motion.div className={props.class} 
+            initial={{scale: 0.9}} 
+            animate={{scale: 1}} 
+            style={props.selected && {background: color, color: 'white'}} 
+            whileTap={{scale: 1.05}} 
+            onTap={props.click}>
+                {props.children}
         </motion.div>
     )
 }
 
-export default FilterButton;
+export default React.memo(FilterButton);

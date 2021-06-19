@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {motion} from'framer-motion'
 
 import styles from './iconBox.module.css';
 
@@ -17,10 +18,13 @@ const IconBox = (props) => {
     }, [props.selectedCard])
 
     return (
-        <div className={styleClass}>
+        <motion.div 
+            className={styleClass}
+            animate={{scale: 0.9}}
+            initial={{scale: 0.8}}>
             <img src={props.src}></img>
-        </div>
+        </motion.div>
     )
 }
 
-export default IconBox;
+export default React.memo(IconBox);
