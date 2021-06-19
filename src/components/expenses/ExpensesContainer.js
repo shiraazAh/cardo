@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef, useLayoutEffect} from "react";
 import {Grid} from '@material-ui/core';
 // import logoBrown from "../../assets/cardLogos/logoforbrown.png"
 import IconBox from "../UI/Iconbox";
@@ -17,11 +17,13 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
       year: false
     })
     
+    const [num, setNum] = useState(0)
     useEffect(() => {
-      console.log("asd")
-    })
+      if(props.showAmount && props.selectedCard === 'brown') setNum(258420) 
+      else if (props.showAmount && props.selectedCard === 'blue') setNum(128300)
+      else if (props.showAmount && props.selectedCard === 'violet') setNum(487612)
+    }, [props.showAmount, props.selectedCard])
 
-    const [num, setNum] = useState(258563)
 
     return( 
         <div ref={ref}>
