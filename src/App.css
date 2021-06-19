@@ -1,115 +1,217 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap');
 
-.App {
-  text-align: center;
-  font-family: Montserrat;
-  -ms-overflow-style: none;
-  /* overflow-x: hidden; */
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
 
-.App-desktop {
-  text-align: center;
-  font-family: Montserrat;
-  -ms-overflow-style: none;
-  width: 325px;
-  height: 685px;
-  overflow: hidden;
-  /* overflow-x: hidden; */
-  display: inline-block;
-  border-radius: 35px;
-  position: relative;
-  margin-right: 20px;
-  margin-top: 15px;
-}
+@media screen and (min-width: 400px) {
+  .App {
+    text-align: center;
+    font-family: Montserrat;
+    -ms-overflow-style: none;
+    /* overflow-x: hidden; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: black !important;
+  }
 
-.iPhoneX-layout {
-  position: absolute;
-  width: 368px;
-  height: 747px;
-  margin-left: -21px;
-}
+  .App-desktop {
+    text-align: center;
+    font-family: Montserrat;
+    -ms-overflow-style: none;
+    width: 325px;
+    height: 685px;
+    overflow: hidden;
+    /* overflow-x: hidden; */
+    display: inline-block;
+    border-radius: 35px;
+    position: relative;
+    margin-right: 20px;
+    margin-top: 15px;
+  }
 
-.App::-webkit-scrollbar {
-  -webkit-appearance: none;
-}
+  .iPhoneX-layout {
+    position: absolute;
+    width: 368px;
+    height: 747px;
+    margin-left: -21px;
+  }
 
-body {
-  background-color: black;
-  /* overflow-x: hidden; */
-  overflow: hidden; /* Hide scrollbars */
-}
+  .App::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  body {
+    background-color: black;
+    /* overflow-x: hidden; */
+    overflow: hidden; /* Hide scrollbars */
+  }
 
-@media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    height: 40vmin;
+    pointer-events: none;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
   }
-  to {
-    transform: rotate(360deg);
+
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
   }
+
+  .App-link {
+    color: #61dafb;
+  }
+
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .card-heading {
+    color: white;
+    text-align: left;
+    /* margin-top: 30px !important; */
+    width: 350px;
+    display: block;
+    margin: auto;
+    top: 20px;
+    z-index: 10;
+    position: absolute;
+    margin-left: 10px;
+  }
+
+  .card-subheading {
+    color: white;
+    text-align: left;
+    /* margin-top: 30px !important; */
+    width: 350px;
+    display: block;
+    margin: auto;
+    font-size: 14px;
+    top: 40px;
+    z-index: 10;
+    position: absolute;
+    margin-left: 10px;
+  }
+
+  .all-cards-container {
+    height: 480px;
+    z-index: 100;
+  }
+
 }
 
-.card-heading {
-  color: white;
-  text-align: left;
-  /* margin-top: 30px !important; */
-  width: 350px;
-  display: block;
-  margin: auto;
-  top: 20px;
-  z-index: 10;
-  position: absolute;
-  margin-left: 10px;
-}
+@media screen and (max-width: 399px) {
+  .App {
+    text-align: center;
+    font-family: Montserrat;
+    -ms-overflow-style: none;
+    color: black !important;
+    /* overflow-x: hidden; */
+  }
 
-.card-subheading {
-  color: white;
-  text-align: left;
-  /* margin-top: 30px !important; */
-  width: 350px;
-  display: block;
-  margin: auto;
-  font-size: 14px;
-  top: 40px;
-  z-index: 10;
-  position: absolute;
-  margin-left: 10px;
-}
+  .App-desktop {
+    text-align: center;
+    font-family: Montserrat;
+    -ms-overflow-style: none;
+    /* overflow-x: hidden; */
+  }
+  .App::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+  
+  body {
+    background-color: black;
+    /* overflow-x: hidden; */
+    overflow: hidden; /* Hide scrollbars */
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
 
-.all-cards-container {
-  height: 50vh;
-  z-index: 100;
+  .iPhoneX-layout {
+    display: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .card-heading {
+    color: white;
+    text-align: left;
+    /* margin-top: 30px !important; */
+    width: 350px;
+    /* display: block; */
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+  }
+  
+  .card-subheading {
+    color: white;
+    text-align: left;
+    /* margin-top: 30px !important; */
+    width: 350px;
+    /* display: block; */
+    margin: auto;
+    position: absolute;
+    font-size: 14px;
+    left: 50%;
+    top: 40px;
+    transform: translateX(-50%);
+  }
+  
+  .all-cards-container {
+    height: 500px;
+    z-index: 100;
+  }
 }
 
 .DigitRoll {
@@ -137,4 +239,73 @@ body {
   font-size: 25px;
   color: black;
   padding: 0 5px;
+}
+
+/*** Start Screen Styles ***/
+
+.startScreen-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.box {
+  background: rgb(139, 139, 139);
+  border-radius: 50px;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  cursor: pointer;
+  top: calc(50% - 150px / 2);
+  left: calc(50% - 90px / 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.startScreen-container .drag-area {
+  opacity: 0.2;
+  background: white;
+  position: absolute;
+  width: 250px;
+  height: 100px;
+  border-radius: 40px;
+  top: calc(50% - 150px / 2);
+  left: calc(50% - 120px);
+}
+
+.startScreen-header {
+  font-size: 32px;
+  font-weight: 500;
+  position: absolute;
+  top: calc(50% - 300px / 2);
+  left: calc(50% - 120px);
+}
+
+.startScreen-dark {
+  font-size: 18px;
+  font-weight: 500;
+  position: absolute;
+  top: calc(50% - 105px / 2);
+  left: calc(50% + 160px);
+}
+
+.startScreen-light {
+  font-size: 18px;
+  font-weight: 500;
+  position: absolute;
+  top: calc(50% - 105px / 2);
+  left: calc(50% - 200px);
+}
+
+.startScreen-button {
+  font-size: 18px;
+  font-weight: 500;
+  position: absolute;
+  padding: 10px 30px;
+  top: calc(50% + 55px);
+  left: calc(50% - 40px);
+  border: none;
+  background: transparent;
+  border-radius: 3px;
+  cursor: pointer;
 }

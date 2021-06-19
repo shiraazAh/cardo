@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
 import AllCards from '../components/cards/AllCards';
 import ExpenseMotionContainer from '../components/expenses/ExpenseMotionComponent'
-// import useWindowDimensions from '../components/extras/useWindowDimensions'
 
 import '../App.css';
 
-function App() {
-//   const { height, width } = useWindowDimensions();
+function DesktopApp() {
   const [cardColor, setCardColor] = useState('brown');
 
   return (
@@ -17,4 +15,4 @@ function App() {
   );
 }
 
-export default App;
+export default DesktopApp;
