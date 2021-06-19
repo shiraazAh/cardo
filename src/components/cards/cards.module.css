@@ -7,10 +7,10 @@
 }
 
 .cardBrown {
-    height: 140px;
-    width: 255px;
+    height: 130px;
+    width: 240px;
     left: -80px;
-    top: 174px;
+    top: 184px;
     margin-left: auto;
     margin-right: auto;
     /* left: 0; */
@@ -26,10 +26,10 @@
 }
 
 .cardBlue {
-    height: 140px;
-    width: 255px;
+    height: 130px;
+    width: 240px;
     left: -180px;
-    top: 160px;
+    top: 170px;
     border-radius: 18.48630714416504px;
     margin-left: auto;
     margin-right: auto;
@@ -44,10 +44,10 @@
 }
 
 .cardViolet {
-    height: 140px;
-    width: 255px;
+    height: 130px;
+    width: 240px;
     left: -260px;
-    top: 150px;
+    top: 160px;
     border-radius: 18.48630714416504px;
     margin-left: auto;
     margin-right: auto;
@@ -172,7 +172,7 @@
   100% {      
     transform: matrix(1, -0.58, 0, 1, 0, 0);
     left: -80px;
-    top: 174px;
+    top: 184px;
   }
 }
 
@@ -203,7 +203,7 @@
   100% {      
     transform: matrix(1, -0.58, 0, 1, 0, 0);
     left: -180px;
-    top: 160px;
+    top: 170px;
   }
 }
 
@@ -234,6 +234,6 @@
     100% {      
       transform: matrix(1, -0.58, 0, 1, 0, 0);
       left: -260px;
-      top: 150px;
+      top: 160px;
     }
   }
