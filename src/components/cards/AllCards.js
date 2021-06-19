@@ -121,11 +121,7 @@ const AllCards = (props) => {
   })
 
   useEffect(() => {
-   console.log(check) 
    if(check) {
-  //  setInitialBlue(false)
-  //  setInitialBrown(false)
-  //  setInitialViolet(false)
     dispatchInitial({type:"AllFalse"})
    }
   }, [check])
@@ -212,7 +208,7 @@ const AllCards = (props) => {
     <div className="all-cards-container" style={{background: 'black'}}>
         <h3 className="card-heading">Select a card</h3>  
         <p className="card-subheading">Tap to view card payments</p>  
-        <button onClick={() => setCheck(!check)}>Just click</button>
+        {/* <button onClick={() => setCheck(!check)}>Just click</button> */}
         <MotionComponent
           violet
           startAnimation={startAnimation}
