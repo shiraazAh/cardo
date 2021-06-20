@@ -10,7 +10,16 @@
 }
 
 .topContainer {
-    /* margin-top: 50%; */
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.topContainer:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
 }
 
 .CardName {
@@ -30,6 +39,7 @@
     border-radius: 18px;
     color: rgba(44, 19, 221, 1);
     font-weight: 500;
+    cursor: pointer;
 }
 
 .TotalWin {
