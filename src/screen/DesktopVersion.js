@@ -4,7 +4,7 @@ import ExpenseMotionContainer from '../components/expenses/ExpenseMotionComponen
 
 import '../App.css';
 
-function DesktopApp() {
+const DesktopApp = (props) => {
   const [cardColor, setCardColor] = useState('brown');
 
   return (
