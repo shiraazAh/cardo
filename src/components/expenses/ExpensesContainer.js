@@ -16,13 +16,44 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
       month: false,
       year: false
     })
-    
+
+    const [expenses, setExpenses] = useState(3280)
     const [num, setNum] = useState(0)
+    const [expenseAmtDigits, setExpenseAmtDigits] = useState(5)
+
+    const brownAmount = 158420;
+    const blueAmount = 128300;
+    const violetAmount = 487612;
+
     useEffect(() => {
-      if(props.showAmount && props.selectedCard === 'brown') setNum(258420) 
-      else if (props.showAmount && props.selectedCard === 'blue') setNum(128300)
-      else if (props.showAmount && props.selectedCard === 'violet') setNum(487612)
-    }, [props.showAmount, props.selectedCard])
+      if(selectedFilter.day){
+        setExpenses('3,280')
+        setExpenseAmtDigits(4)
+      } else if(selectedFilter.week){
+        setExpenses('11,649')
+        setExpenseAmtDigits(5)
+      } else if(selectedFilter.month){
+        setExpenses('35,129')
+        setExpenseAmtDigits(5)
+      } else if(selectedFilter.year){
+        setExpenses('76,380')
+        setExpenseAmtDigits(5)
+      } 
+    }, [selectedFilter])
+
+    useEffect(() => {
+      const amount = props.selectedCard === 'brown' ? brownAmount : props.selectedCard === 'blue' ? blueAmount : violetAmount;
+      const day = amount;
+      const week = amount + 121569
+      const month = amount + 361569
+      const year = amount + 500169
+      if(props.showAmount) {
+        if(selectedFilter.day) setNum(day)
+        else if(selectedFilter.week) setNum(week)
+        else if(selectedFilter.month) setNum(month)
+        else if(selectedFilter.year) setNum(year)
+      }
+    }, [props.selectedCard, selectedFilter, props.showAmount])
 
 
     return( 
@@ -64,7 +95,7 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                   <p className={styles.TotalWin}>Total <span style={{color: 'rgba(203, 43, 111, 1)'}}>WIN</span></p>
                 </Grid>
                 <Grid item xs={6} style={{paddingBottom: '0px'}}>
-                  <DigitRoll className={styles.WinAmount} num={num} height={2} width={1.3} length={9} divider="," />
+                  <DigitRoll className={styles.WinAmount} num={num} height={2} width={1.3} length={6} divider="," />
                   {/* <p className={styles.WinAmount}>$258,563</p> */}
                 </Grid>
                 </Grid>
@@ -82,7 +113,7 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                   <Grid item xs={8}>
                     <div className={styles.ExpenseBox}>
                       <span className={styles.ExpenseBoxTitle}>IN</span>
-                      <span>$35,234</span>
+                      <span>${expenses}</span>
                     </div>
                     <div className={styles.ExpenseBox}>
                       <span className={styles.ExpenseBoxTitle}>OUT</span>
@@ -90,7 +121,7 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                     </div>
                     <div className={styles.ExpenseBox}>
                       <span className={styles.ExpenseBoxTitle}>WIN</span>
-                      <span>+ $35,234</span>
+                      <span>+ ${expenses}</span>
                     </div>
                   </Grid>  
                 </Grid>  
@@ -105,7 +136,7 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                   <Grid item xs={8}>
                     <div className={styles.ExpenseBox}>
                       <span className={styles.ExpenseBoxTitle}>IN</span>
-                      <span>$35,234</span>
+                      <span>${expenses}</span>
                     </div>
                     <div className={styles.ExpenseBox}>
                       <span className={styles.ExpenseBoxTitle}>OUT</span>
@@ -113,7 +144,7 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                     </div>
                     <div className={styles.ExpenseBox}>
                       <span className={styles.ExpenseBoxTitle}>WIN</span>
-                      <span>+ $35,234</span>
+                      <span>+ ${expenses}</span>
                     </div>
                   </Grid>  
                 </Grid>
@@ -128,7 +159,7 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                   <Grid item xs={8}>
                     <div className={styles.ExpenseBox}>
                       <span className={styles.ExpenseBoxTitle}>IN</span>
-                      <span>$35,234</span>
+                      <span>${expenses}</span>
                     </div>
                     <div className={styles.ExpenseBox}>
                       <span className={styles.ExpenseBoxTitle}>OUT</span>
@@ -136,7 +167,7 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                     </div>
                     <div className={styles.ExpenseBox}>
                       <span className={styles.ExpenseBoxTitle}>WIN</span>
-                      <span>+ $35,234</span>
+                      <span>+ ${expenses}</span>
                     </div>
                   </Grid>  
                 </Grid>
@@ -151,7 +182,7 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                   <Grid item xs={8}>
                     <div className={styles.ExpenseBox}>
                       <span className={styles.ExpenseBoxTitle}>IN</span>
-                      <span>$35,234</span>
+                      <span>${expenses}</span>
                     </div>
                     <div className={styles.ExpenseBox}>
                       <span className={styles.ExpenseBoxTitle}>OUT</span>
@@ -159,7 +190,7 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                     </div>
                     <div className={styles.ExpenseBox}>
                       <span className={styles.ExpenseBoxTitle}>WIN</span>
-                      <span>+ $35,234</span>
+                      <span>+ ${expenses}</span>
                     </div>
                   </Grid>  
                 </Grid>  
@@ -174,7 +205,7 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                   <Grid item xs={8}>
                     <div className={styles.ExpenseBox}>
                       <span className={styles.ExpenseBoxTitle}>IN</span>
-                      <span>$35,234</span>
+                      <span>${expenses}</span>
                     </div>
                     <div className={styles.ExpenseBox}>
                       <span className={styles.ExpenseBoxTitle}>OUT</span>
@@ -182,7 +213,7 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                     </div>
                     <div className={styles.ExpenseBox}>
                       <span className={styles.ExpenseBoxTitle}>WIN</span>
-                      <span>+ $35,234</span>
+                      <span>+ ${expenses}</span>
                     </div>
                   </Grid>  
                 </Grid>  
@@ -197,7 +228,7 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                   <Grid item xs={8}>
                     <div className={styles.ExpenseBox}>
                       <span className={styles.ExpenseBoxTitle}>IN</span>
-                      <span>$35,234</span>
+                      <span>${expenses}</span>
                     </div>
                     <div className={styles.ExpenseBox}>
                       <span className={styles.ExpenseBoxTitle}>OUT</span>
@@ -205,7 +236,7 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                     </div>
                     <div className={styles.ExpenseBox}>
                       <span className={styles.ExpenseBoxTitle}>WIN</span>
-                      <span>+ $35,234</span>
+                      <span>+ ${expenses}</span>
                     </div>
                   </Grid>  
                 </Grid>  
@@ -220,7 +251,7 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                   <Grid item xs={8}>
                     <div className={styles.ExpenseBox}>
                       <span className={styles.ExpenseBoxTitle}>IN</span>
-                      <span>$35,234</span>
+                      <span>${expenses}</span>
                     </div>
                     <div className={styles.ExpenseBox}>
                       <span className={styles.ExpenseBoxTitle}>OUT</span>
@@ -228,7 +259,7 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                     </div>
                     <div className={styles.ExpenseBox}>
                       <span className={styles.ExpenseBoxTitle}>WIN</span>
-                      <span>+ $35,234</span>
+                      <span>+ ${expenses}</span>
                     </div>
                   </Grid>  
                 </Grid>  
