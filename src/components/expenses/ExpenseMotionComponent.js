@@ -48,7 +48,8 @@ const ExpenseMotionContainer = (props) => {
         variants={variants}
         showAmount={showAmount}
         // transition={{duration: 0.5, delay: 1.5}}
-        dragConstraints={{bottom: 20, top: -650}}
+        dragConstraints={{bottom: 20, top: -800}}
+        dragElastic={0.1}
           />
     </div>
   );
