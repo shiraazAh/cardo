@@ -7,14 +7,19 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import DesktopVersion from "./DesktopVersion";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 import IphoneXLayout from "../assets/iPhone X - Silver.png";
 import "../App.css";
+
+// toast.configure();
 
 const StartScreen = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(true);
   const [themeSelected, setThemeSelected] = useState(false);
   const [userName, setUserName] = useState("");
   const [nameGiven, setNameGiven] = useState("");
+  const [error, setError] = useState("")
 
   const x = useMotionValue(80);
   const xInput = [-80, 0, 80];
@@ -34,11 +39,11 @@ const StartScreen = () => {
   const boxVariants = {
     dark: {
       x: 80,
-      transition: { duration: 1, type: "spring" },
+      transition: { duration: 0.5},
     },
     light: {
       x: -80,
-      transition: { duration: 1, type: "spring" },
+      transition: { duration: 0.5},
     },
   };
 
@@ -62,17 +67,31 @@ const StartScreen = () => {
     }
   };
 
+
+
   const handleInput = (e) => {
     let value = e.target.value;
     setUserName(value);
   };
 
+  useEffect(() => {
+    const errorToaster = () => toast.error(error); toast.clearWaitingQueue();
+    if(error) errorToaster(); setError(""); 
+  }, [error])
+
   const handleName = () => {
-    setNameGiven(true);
+    if(userName.length >= 18) {
+      setError("Name should contain less than 18 characters")
+    } else if (userName.length <= 8 || userName.length === 0) {
+      setError("Name should contain atleast 8 characters")
+    } else {
+      setNameGiven(true);
+    }
   };
 
   return (
     <NameContext.Provider value={userName}>
+      <ToastContainer limit={1}/>
       <motion.div className="startScreen-container" style={{ background }}>
         <AnimatePresence>
           {!themeSelected && !nameGiven && (
@@ -108,9 +127,9 @@ const StartScreen = () => {
                 Dark
               </motion.p>
               <motion.button
-                className="startScreen-button"
+                className={isDarkTheme ? "startScreen-button-dark" : "startScreen-button-light"}
                 onClick={() => setThemeSelected(true)}
-                style={{ border, color }}
+                style={{ border }}
               >
                 Next
               </motion.button>
@@ -119,7 +138,7 @@ const StartScreen = () => {
         </AnimatePresence>
         <AnimatePresence>
           {themeSelected && !nameGiven && (
-              <motion.div key="select-theme" initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 0.5}} exit={{opacity: 0}}>
+              <motion.div key="select-theme" initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 0.2}} exit={{opacity: 0}}>
               <motion.div 
               className="startScreen-name-header" style={{ color }}>
                 Enter the name you want shown on the cards
@@ -131,11 +150,11 @@ const StartScreen = () => {
                 onChange={handleInput}
                 type="text"
                 style={{ border, color }}
-              ></motion.input>
+              ></motion.input> 
               <motion.button
-                className="startScreen-name-button"
+                className={isDarkTheme ? "startScreen-name-button-dark" : "startScreen-name-button-light"}
                 onClick={() => handleName()}
-                style={{ border, color }}
+                style={{ border }}
               >
                 Start
               </motion.button>
@@ -148,7 +167,7 @@ const StartScreen = () => {
               className="App example"
               style={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ duration: 0.5, delay: 1 }}
             >
               <img className="iPhoneX-layout" src={IphoneXLayout}></img>
               <DesktopVersion userName={userName} />

@@ -23,6 +23,7 @@
     /* transform: matrix(1, -0.58, 0, 0.89, 0, 0); */
     transform: matrix(1, -0.58, 0, 1, 0, 0);
     z-index: 10;
+    cursor: pointer;
 }
 
 .cardBlue {
@@ -41,6 +42,7 @@
     background: radial-gradient(138.1% 425.94% at 118.1% -36.41%, #CA8BFB 0%, #9C2CF3 37.87%, #3A49F9 100%);
     border-radius: 18.4863px;
     transform: matrix(1, -0.58, 0, 1, 0, 0);
+    cursor: pointer;
 }
 
 .cardViolet {
@@ -59,6 +61,7 @@
     background: radial-gradient(138.1% 425.94% at 118.1% -36.41%, #FB8BCE 0%, #744C94 37.87%, #2f2d2d 100%);
     border-radius: 18.4863px;
     transform: matrix(1, -0.58, 0, 1, 0, 0);
+    cursor: pointer;
 }
 
 .cardAmount {

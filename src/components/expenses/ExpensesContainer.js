@@ -241,7 +241,7 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                   </Grid>  
                 </Grid>  
                 
-                <Grid container style={{borderBottom: '2px solid #F0EEFF', marginLeft: '20px', marginRight: '20px', marginTop: '5px', padding: '15px 0 10px'}} spacing={3}>
+                <Grid container style={{ marginLeft: '20px', marginRight: '20px', marginTop: '5px', padding: '15px 0 10px'}} spacing={3}>
                   <Grid item xs={3}>
                     <IconBox 
                       color="brown" 
@@ -262,6 +262,9 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                       <span>+ ${expenses}</span>
                     </div>
                   </Grid>  
+                </Grid>  
+                
+                <Grid container style={{height: '100px', marginLeft: '20px', marginRight: '20px', marginTop: '5px', padding: '15px 0 10px'}} spacing={3}>
                 </Grid>  
                   {/* <Grid item xs={12} style={{padding: '0px'}}>
                     <p className={styles.Underline}></p>

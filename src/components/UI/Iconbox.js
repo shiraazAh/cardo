@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
-import {motion} from'framer-motion'
+import {motion} from 'framer-motion'
+import MoneyIcon from './../../assets/moneyIcon.png'
 
 import styles from './iconBox.module.css';
 
@@ -22,7 +23,7 @@ const IconBox = (props) => {
             className={styleClass}
             animate={{scale: 0.9}}
             initial={{scale: 0.8}}>
-            <img src={props.src}></img>
+            <img className={styles.imageIcon} src={MoneyIcon}></img>
         </motion.div>
     )
 }

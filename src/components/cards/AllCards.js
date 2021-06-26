@@ -110,10 +110,12 @@ const AllCards = (props) => {
   const MotionComponent = motion(CreditCard)
 
   useEffect(() => { // Initial Animation is true (should happen), then after 1.5 seconds it should be removed (should'nt happen)
-    setStartAnimation(true) 
+    setTimeout(() => {
+      setStartAnimation(true)
+  }, 1000)
     setTimeout(() => {
         setStartAnimation(false)
-    }, 1500)
+    }, 2500)
   }, [])
 
   useEffect(() => {

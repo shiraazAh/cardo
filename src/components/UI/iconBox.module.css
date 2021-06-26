@@ -21,3 +21,8 @@
     box-shadow: 0px 4.57176px 18.287px rgba(46, 38, 217, 0.3);
     border-radius: 14.6296px;
 }
+
+.imageIcon {
+    width: 80%;
+    margin-top: 8px;
+}

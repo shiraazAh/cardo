@@ -15,14 +15,14 @@ const ExpenseMotionContainer = (props) => {
       setInitial('secondPostion')
       setAnimate('afterFirstAnimate')
       setShowAmount(true)
-    }, 2200)
+    }, 3000)
   }, [])
 
   const variants = {
     //When Brown Selected
     startAnimate: {
       y: -30,
-      transition: { duration: 0.5, delay: 1.5}, //type: 'spring'
+      transition: { duration: 0.5, delay: 2.5}, //type: 'spring'
     },
     afterFirstAnimate: {
       y: -30,
