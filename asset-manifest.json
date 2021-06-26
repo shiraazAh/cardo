@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/cardo/static/css/main.1a03c4cc.chunk.css",
+    "main.js": "/cardo/static/js/main.3634489b.chunk.js",
+    "main.js.map": "/cardo/static/js/main.3634489b.chunk.js.map",
+    "runtime-main.js": "/cardo/static/js/runtime-main.0ba7b3a9.js",
+    "runtime-main.js.map": "/cardo/static/js/runtime-main.0ba7b3a9.js.map",
+    "static/css/2.97503911.chunk.css": "/cardo/static/css/2.97503911.chunk.css",
+    "static/js/2.a53570c6.chunk.js": "/cardo/static/js/2.a53570c6.chunk.js",
+    "static/js/2.a53570c6.chunk.js.map": "/cardo/static/js/2.a53570c6.chunk.js.map",
+    "static/js/3.0d86ef0c.chunk.js": "/cardo/static/js/3.0d86ef0c.chunk.js",
+    "static/js/3.0d86ef0c.chunk.js.map": "/cardo/static/js/3.0d86ef0c.chunk.js.map",
+    "index.html": "/cardo/index.html",
+    "static/css/2.97503911.chunk.css.map": "/cardo/static/css/2.97503911.chunk.css.map",
+    "static/css/main.1a03c4cc.chunk.css.map": "/cardo/static/css/main.1a03c4cc.chunk.css.map",
+    "static/js/2.a53570c6.chunk.js.LICENSE.txt": "/cardo/static/js/2.a53570c6.chunk.js.LICENSE.txt",
+    "static/media/iPhone X - Silver.85e73312.png": "/cardo/static/media/iPhone X - Silver.85e73312.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0ba7b3a9.js",
+    "static/css/2.97503911.chunk.css",
+    "static/js/2.a53570c6.chunk.js",
+    "static/css/main.1a03c4cc.chunk.css",
+    "static/js/main.3634489b.chunk.js"
+  ]
+}
