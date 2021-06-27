@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import AllCards from '../components/cards/AllCards';
-import ExpenseMotionContainer from '../components/expenses/ExpenseMotionComponent'
+import AllCards from './AllCards';
+import ExpenseMotionContainer from './ExpenseMotionComponent'
 
-import '../App.css';
+import '../../App.css';
 
 const DesktopApp = (props) => {
   const [cardColor, setCardColor] = useState('brown');

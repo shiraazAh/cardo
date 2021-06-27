@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import ExpensesContainer from "./ExpensesContainer";
+import ExpensesContainer from "../../components/Expenses/ExpensesContainer";
 import { motion, useMotionValue } from 'framer-motion'
 
 const ExpenseMotionContainer = (props) => {
   const [initial, setInitial] = useState('startPosition');
   const [animate, setAnimate] = useState('startAnimate');
   const [showAmount, setShowAmount] = useState(false);
-//   const [scrollPos, setScrollPos] = useState(1)
 
   const y = useMotionValue(-30);
 
@@ -22,11 +21,11 @@ const ExpenseMotionContainer = (props) => {
     //When Brown Selected
     startAnimate: {
       y: -30,
-      transition: { duration: 0.5, delay: 2.5}, //type: 'spring'
+      transition: { duration: 0.5, delay: 2.5},
     },
     afterFirstAnimate: {
       y: -30,
-      transition: { duration: 0.5}, //type: 'spring'
+      transition: { duration: 0.5},
     },
     startPosition: {
       y: 0,
@@ -47,7 +46,6 @@ const ExpenseMotionContainer = (props) => {
         animate={animate}
         variants={variants}
         showAmount={showAmount}
-        // transition={{duration: 0.5, delay: 1.5}}
         dragConstraints={{bottom: 20, top: -800}}
         dragElastic={0.1}
           />

@@ -9,9 +9,9 @@ const FilterButton = (props) => {
         if(props.selectedCard === 'brown') {
             setColor('#C9974E')
         } else if (props.selectedCard === 'blue') {
-            setColor('#A136F4')
-        } else if (props.selectedCard === 'violet') {
             setColor('#2E26D9')
+        } else if (props.selectedCard === 'violet') {
+            setColor('#A136F4')
         }
     }, [color, props.selectedCard])
 

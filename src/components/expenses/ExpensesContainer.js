@@ -1,10 +1,10 @@
 import React, {useState, useEffect, useRef, useLayoutEffect} from "react";
 import {Grid} from '@material-ui/core';
 // import logoBrown from "../../assets/cardLogos/logoforbrown.png"
-import IconBox from "../UI/Iconbox";
+import IconBox from "../UI/IconBox/Iconbox";
 import FilterButton from "../UI/buttons/filterButtons"
 import DigitRoll from 'digit-roll-react'
-// import Expense from './Expense'
+import Expense from './Expense'
 
 import styles from './expenses.module.css';
 
@@ -17,15 +17,16 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
       year: false
     })
 
-    const [expenses, setExpenses] = useState(3280)
-    const [num, setNum] = useState(0)
+    const [expenses, setExpenses] = useState(3280) //Initial single Expense of each card
+    const [num, setNum] = useState(0) //Total Expense for digitroll
     const [expenseAmtDigits, setExpenseAmtDigits] = useState(5)
 
+    //Initial Total Expense of each card
     const brownAmount = 158420;
     const blueAmount = 128300;
     const violetAmount = 487612;
 
-    useEffect(() => {
+    useEffect(() => { // Change respective expense on filtering
       if(selectedFilter.day){
         setExpenses('3,280')
         setExpenseAmtDigits(4)
@@ -41,7 +42,7 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
       } 
     }, [selectedFilter])
 
-    useEffect(() => {
+    useEffect(() => { // Change total  expense on filtering
       const amount = props.selectedCard === 'brown' ? brownAmount : props.selectedCard === 'blue' ? blueAmount : violetAmount;
       const day = amount;
       const week = amount + 121569
@@ -60,9 +61,11 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
         <div ref={ref}>
           <div className={styles.topContainer}>
             <Grid container className={styles.Container} spacing={3}>
+                {/* Selected Card */}
                 <Grid item xs={12}>
                   <h3 className={styles.CardName}>{props.selectedCard === 'brown' ? 'Gold Card' : props.selectedCard === 'blue' ? 'Blue Card' : 'Violet Card'}</h3>
                 </Grid>
+                {/* Filter by day/week/month/year */}
                 <Grid container style={{marginLeft: '20px'}} spacing={3}>
                     <Grid item xs={3}>
                       <FilterButton class={styles.DateSort}
@@ -90,157 +93,25 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                     </Grid>
                 </Grid>
 
+                {/* Total Expense */}
                 <Grid container style={{borderBottom: '2px solid #F0EEFF', marginLeft: '20px', marginRight: '20px', marginTop: '5px'}} spacing={3}>
                 <Grid item xs={6} style={{paddingBottom: '0px'}}>
                   <p className={styles.TotalWin}>Total <span style={{color: 'rgba(203, 43, 111, 1)'}}>WIN</span></p>
                 </Grid>
                 <Grid item xs={6} style={{paddingBottom: '0px'}}>
                   <DigitRoll className={styles.WinAmount} num={num} height={2} width={1.3} length={6} divider="," />
-                  {/* <p className={styles.WinAmount}>$258,563</p> */}
                 </Grid>
-                </Grid>
-                {/* <Grid item xs={12} style={{padding: '0px'}}>
-                  <p className={styles.Underline}></p>
-                </Grid> */}
-
-                <Grid container style={{borderBottom: '2px solid #F0EEFF', marginLeft: '20px', marginRight: '20px', marginTop: '5px', padding: '15px 0 10px'}} spacing={3}>
-                  <Grid item xs={3}>
-                    <IconBox 
-                      color="brown" 
-                      selectedCard={props.selectedCard}
-                      src={''}/>
-                  </Grid>  
-                  <Grid item xs={8}>
-                    <div className={styles.ExpenseBox}>
-                      <span className={styles.ExpenseBoxTitle}>IN</span>
-                      <span>${expenses}</span>
-                    </div>
-                    <div className={styles.ExpenseBox}>
-                      <span className={styles.ExpenseBoxTitle}>OUT</span>
-                      <span>$0</span>
-                    </div>
-                    <div className={styles.ExpenseBox}>
-                      <span className={styles.ExpenseBoxTitle}>WIN</span>
-                      <span>+ ${expenses}</span>
-                    </div>
-                  </Grid>  
-                </Grid>  
-
-                <Grid container style={{borderBottom: '2px solid #F0EEFF', marginLeft: '20px', marginRight: '20px', marginTop: '5px', padding: '15px 0 10px'}} spacing={3}>
-                  <Grid item xs={3}>
-                    <IconBox 
-                      color="brown" 
-                      selectedCard={props.selectedCard}
-                      src={''}/>
-                  </Grid>  
-                  <Grid item xs={8}>
-                    <div className={styles.ExpenseBox}>
-                      <span className={styles.ExpenseBoxTitle}>IN</span>
-                      <span>${expenses}</span>
-                    </div>
-                    <div className={styles.ExpenseBox}>
-                      <span className={styles.ExpenseBoxTitle}>OUT</span>
-                      <span>$0</span>
-                    </div>
-                    <div className={styles.ExpenseBox}>
-                      <span className={styles.ExpenseBoxTitle}>WIN</span>
-                      <span>+ ${expenses}</span>
-                    </div>
-                  </Grid>  
-                </Grid>
-
-                <Grid container style={{borderBottom: '2px solid #F0EEFF', marginLeft: '20px', marginRight: '20px', marginTop: '5px', padding: '15px 0 10px'}} spacing={3}>
-                  <Grid item xs={3}>
-                    <IconBox 
-                      color="brown" 
-                      selectedCard={props.selectedCard}
-                      src={''}/>
-                  </Grid>  
-                  <Grid item xs={8}>
-                    <div className={styles.ExpenseBox}>
-                      <span className={styles.ExpenseBoxTitle}>IN</span>
-                      <span>${expenses}</span>
-                    </div>
-                    <div className={styles.ExpenseBox}>
-                      <span className={styles.ExpenseBoxTitle}>OUT</span>
-                      <span>$0</span>
-                    </div>
-                    <div className={styles.ExpenseBox}>
-                      <span className={styles.ExpenseBoxTitle}>WIN</span>
-                      <span>+ ${expenses}</span>
-                    </div>
-                  </Grid>  
                 </Grid>
                   
-                <Grid container style={{borderBottom: '2px solid #F0EEFF', marginLeft: '20px', marginRight: '20px', marginTop: '5px', padding: '15px 0 10px'}} spacing={3}>
-                  <Grid item xs={3}>
-                    <IconBox 
-                      color="brown" 
-                      selectedCard={props.selectedCard}
-                      src={''}/>
-                  </Grid>  
-                  <Grid item xs={8}>
-                    <div className={styles.ExpenseBox}>
-                      <span className={styles.ExpenseBoxTitle}>IN</span>
-                      <span>${expenses}</span>
-                    </div>
-                    <div className={styles.ExpenseBox}>
-                      <span className={styles.ExpenseBoxTitle}>OUT</span>
-                      <span>$0</span>
-                    </div>
-                    <div className={styles.ExpenseBox}>
-                      <span className={styles.ExpenseBoxTitle}>WIN</span>
-                      <span>+ ${expenses}</span>
-                    </div>
-                  </Grid>  
-                </Grid>  
-
-                <Grid container style={{borderBottom: '2px solid #F0EEFF', marginLeft: '20px', marginRight: '20px', marginTop: '5px', padding: '15px 0 10px'}} spacing={3}>
-                  <Grid item xs={3}>
-                    <IconBox 
-                      color="brown" 
-                      selectedCard={props.selectedCard}
-                      src={''}/>
-                  </Grid>  
-                  <Grid item xs={8}>
-                    <div className={styles.ExpenseBox}>
-                      <span className={styles.ExpenseBoxTitle}>IN</span>
-                      <span>${expenses}</span>
-                    </div>
-                    <div className={styles.ExpenseBox}>
-                      <span className={styles.ExpenseBoxTitle}>OUT</span>
-                      <span>$0</span>
-                    </div>
-                    <div className={styles.ExpenseBox}>
-                      <span className={styles.ExpenseBoxTitle}>WIN</span>
-                      <span>+ ${expenses}</span>
-                    </div>
-                  </Grid>  
-                </Grid>  
-
-                <Grid container style={{borderBottom: '2px solid #F0EEFF', marginLeft: '20px', marginRight: '20px', marginTop: '5px', padding: '15px 0 10px'}} spacing={3}>
-                  <Grid item xs={3}>
-                    <IconBox 
-                      color="brown" 
-                      selectedCard={props.selectedCard}
-                      src={''}/>
-                  </Grid>  
-                  <Grid item xs={8}>
-                    <div className={styles.ExpenseBox}>
-                      <span className={styles.ExpenseBoxTitle}>IN</span>
-                      <span>${expenses}</span>
-                    </div>
-                    <div className={styles.ExpenseBox}>
-                      <span className={styles.ExpenseBoxTitle}>OUT</span>
-                      <span>$0</span>
-                    </div>
-                    <div className={styles.ExpenseBox}>
-                      <span className={styles.ExpenseBoxTitle}>WIN</span>
-                      <span>+ ${expenses}</span>
-                    </div>
-                  </Grid>  
-                </Grid>  
+                {/* Each Expenses */}
+                <Expense selectedCard={props.selectedCard} expenses={expenses} />
+                <Expense selectedCard={props.selectedCard} expenses={expenses} />
+                <Expense selectedCard={props.selectedCard} expenses={expenses} />
+                <Expense selectedCard={props.selectedCard} expenses={expenses} />
+                <Expense selectedCard={props.selectedCard} expenses={expenses} />
+                <Expense selectedCard={props.selectedCard} expenses={expenses} />
                 
+                {/* Final expense without border bottom*/}
                 <Grid container style={{ marginLeft: '20px', marginRight: '20px', marginTop: '5px', padding: '15px 0 10px'}} spacing={3}>
                   <Grid item xs={3}>
                     <IconBox 
@@ -263,19 +134,10 @@ const ExpensesContainer = React.forwardRef((props, ref) => {
                     </div>
                   </Grid>  
                 </Grid>  
-                
-                <Grid container style={{height: '100px', marginLeft: '20px', marginRight: '20px', marginTop: '5px', padding: '15px 0 10px'}} spacing={3}>
+
+                {/* White background*/}
+                <Grid container style={{height: '1000px', marginLeft: '20px', marginRight: '20px', marginTop: '5px', padding: '15px 0 10px'}} spacing={3}>
                 </Grid>  
-                  {/* <Grid item xs={12} style={{padding: '0px'}}>
-                    <p className={styles.Underline}></p>
-                  </Grid> */}
-                  {/* <Grid item xs={12}>
-                    <p className={styles.p}>Select a card</p>
-                  </Grid>  
-                  <Grid item xs={12} style={{padding: '0px'}}>
-                    <p className={styles.Underline}></p>
-                  </Grid> */}
-                {/* <Expense /> */}
             </Grid>
           </div>
         </div>

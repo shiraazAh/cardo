@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {motion} from 'framer-motion'
-import MoneyIcon from './../../assets/moneyIcon.png'
+import MoneyIcon from './../../../assets/moneyIcon.png'
 
 import styles from './iconBox.module.css';
 

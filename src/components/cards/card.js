@@ -7,7 +7,7 @@ import logoViolet from "../../assets/cardLogos/logoforviolet.png"
 
 const creditCard = React.forwardRef((props, ref) => {
 
-    const userName = useContext(NameContext)
+    const userName = useContext(NameContext) //get username
     
     return(
     props.brown ? <div ref={ref}>

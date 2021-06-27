@@ -6,7 +6,7 @@ import {
   useTransform,
   AnimatePresence,
 } from "framer-motion";
-import DesktopVersion from "./DesktopVersion";
+import App from "./mainApp/mainApp";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import IphoneXLayout from "../assets/iPhone X - Silver.png";
@@ -170,7 +170,7 @@ const StartScreen = () => {
               transition={{ duration: 0.5, delay: 1 }}
             >
               <img className="iPhoneX-layout" src={IphoneXLayout}></img>
-              <DesktopVersion userName={userName} />
+              <App userName={userName} />
             </motion.div>
           )}
         </AnimatePresence>
