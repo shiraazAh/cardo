@@ -427,6 +427,52 @@
   outline:none;
 }
 
+/* media screens for certain component */
+@media screen and (max-width: 700px) {
+  .startScreen-name-header {
+    font-size: 24px;
+    left: calc(50% - 240px);
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .startScreen-name-header {
+    font-size: 24px;
+    width: 300px;
+    left: calc(50% - 143px);
+    top: calc(50% - 260px / 2);
+    text-align: center;
+  }
+
+  .startScreen-container .drag-area {
+    width: 200px;
+    height: 60px;
+    top: calc(50% - 120px / 2);
+    left: calc(50% - 100px);
+  }
+
+  .box {
+    width: 60px;
+    height: 60px;
+    top: calc(50% - 120px / 2);
+    left: calc(50% - 68px / 2);
+  }
+
+  .startScreen-dark {
+    font-size: 16px;
+    top: calc(50% - 105px / 2);
+    left: calc(50% + 120px);
+  }
+
+  .startScreen-light {
+    font-size: 16px;
+    top: calc(50% - 105px / 2);
+    left: calc(50% - 160px);
+  }
+
+}
+
+
 /*** Toastify ***/
 .Toastify__toast--error {
   box-shadow: 1px 1px 10px rgb(146, 146, 146) !important;

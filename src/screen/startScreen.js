@@ -12,8 +12,6 @@ import 'react-toastify/dist/ReactToastify.css'
 import IphoneXLayout from "../assets/iPhone X - Silver.png";
 import "../App.css";
 
-// toast.configure();
-
 const StartScreen = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(true);
   const [themeSelected, setThemeSelected] = useState(false);
@@ -149,7 +147,7 @@ const StartScreen = () => {
                 }`}
                 onChange={handleInput}
                 type="text"
-                style={{ border, color }}
+                style={{ border, color,  }}
               ></motion.input> 
               <motion.button
                 className={isDarkTheme ? "startScreen-name-button-dark" : "startScreen-name-button-light"}
